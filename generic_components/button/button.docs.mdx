@@ -3,17 +3,38 @@ description: A Button component.
 ---
 
 import { Button } from './button';
+import { ThemeProvider } from '@generic_components/whizdata.generic_components.theme-provider';
 
 A component that does something special and renders text in a div.
 
 ### Component usage
 
 ```js
-<Button>Hello world!</Button>
+<ThemeProvider>
+  <Button>Button</Button>
+</ThemeProvider>
 ```
 
-### Render hello world!
+### Render Contained Button
 
 ```js live
-<Button variant="contained">Hello world!</Button>
+<ThemeProvider>
+  <Button variant="contained">Button</Button>
+</ThemeProvider>
+```
+
+### Render Outlined Button
+
+```js live
+<ThemeProvider>
+  <Button variant="outlined">Button</Button>
+</ThemeProvider>
+```
+
+### Render Text Button
+
+```js live
+<ThemeProvider>
+  <Button variant="text">Button</Button>
+</ThemeProvider>
 ```
