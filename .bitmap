@@ -11,13 +11,13 @@
 {
     "button": {
         "scope": "whizdata.generic_components",
-        "version": "1.0.1",
+        "version": "1.0.2",
         "mainFile": "index.ts",
         "rootDir": "generic_components/button"
     },
     "theme-provider": {
         "scope": "whizdata.generic_components",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "mainFile": "index.ts",
         "rootDir": "generic_components/theme-provider"
     },
