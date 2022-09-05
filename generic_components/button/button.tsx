@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react';
-import { Button as MuiButton } from '@mui/material';
-import { variants } from './constants';
-import { useStyles } from './styles';
 import clsx from 'clsx';
+import { Button as MuiButton, CircularProgress, Icon } from '@mui/material';
+import { textStyle, variants } from './constants';
+import { useStyles } from './styles';
 
 export type ButtonProps = {
   /**
@@ -12,7 +12,7 @@ export type ButtonProps = {
   /**
    * Class to be added to button.
    */
-  className?: any;
+  buttonClasses?: any;
   /**
    * Disable a button.
    */
@@ -22,34 +22,73 @@ export type ButtonProps = {
    */
   icon?: ReactNode;
   /**
+   * Set if button is loading.
+   */
+  isLoading?: boolean;
+  /**
    * Choose button variant.
    */
   variant?: variants;
   /**
-   * a node to be rendered in the special component.
+   * Choose button text style.
+   */
+  textVariant?: textStyle;
+
+  /**
+   * Class to be added to CircularProgress.
+   */
+  circularProgressClasses?: any;
+
+  /**
+   * Attach onClick handler to the button.
    */
   onClick?: (e: any) => void;
 };
 
 export function Button({
+  // Button props
+  buttonClasses,
   children,
-  className,
   disabled = false,
   icon,
+  isLoading = false,
+  textVariant = textStyle.UPPERCASE,
   variant = variants.CONTAINED,
+
+  // CircularProgress props
+  circularProgressClasses,
+
+  // functions
   onClick,
 }: ButtonProps) {
   const { classes } = useStyles();
 
+  const getButtonContent = () => {
+    return isLoading ? (
+      <CircularProgress
+        className={clsx(
+          circularProgressClasses,
+          classes['circularProgressRoot']
+        )}
+      />
+    ) : (
+      children
+    );
+  };
+
+  const setDisabled = () => {
+    return disabled || isLoading;
+  };
+
   return (
     <MuiButton
-      className={clsx(className, classes.root)}
+      className={clsx(buttonClasses, classes.buttonRoot, classes[textVariant])}
       variant={variant}
-      disabled={disabled}
+      disabled={setDisabled()}
       endIcon={icon}
       onClick={onClick}
     >
-      {children}
+      {getButtonContent()}
     </MuiButton>
   );
 }

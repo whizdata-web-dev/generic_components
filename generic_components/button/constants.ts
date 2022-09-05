@@ -3,3 +3,9 @@ export enum variants {
   OUTLINED = 'outlined',
   TEXT = 'text',
 }
+
+export enum textStyle {
+  CAPITALIZE = 'capitalize',
+  UPPERCASE = 'uppercase',
+  LOWERCASE = 'lowercase',
+}

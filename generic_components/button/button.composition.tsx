@@ -6,10 +6,20 @@ import { ThemeProvider } from '@generic_components/whizdata.generic_components.t
 export const ContainedButton = () => {
   return (
     <ThemeProvider>
+      <Button buttonClasses={'ContainedButton'} variant={variants.CONTAINED}>
+        Button
+      </Button>
+    </ThemeProvider>
+  );
+};
+
+export const ContainedButtonLoading = () => {
+  return (
+    <ThemeProvider>
       <Button
-        className={'ContainedButton'}
+        buttonClasses={'ContainedButton'}
         variant={variants.CONTAINED}
-        onClick={() => console.log('clicked on contained')}
+        isLoading={true}
       >
         Button
       </Button>
@@ -21,7 +31,7 @@ export const ContainedButtonDisabled = () => {
   return (
     <ThemeProvider>
       <Button
-        className={'ContainedButtonDisabled'}
+        buttonClasses={'ContainedButtonDisabled'}
         variant={variants.CONTAINED}
         disabled={true}
       >
@@ -34,10 +44,20 @@ export const ContainedButtonDisabled = () => {
 export const OutlinedButton = () => {
   return (
     <ThemeProvider>
+      <Button buttonClasses={'OutlinedButton'} variant={variants.OUTLINED}>
+        Button
+      </Button>
+    </ThemeProvider>
+  );
+};
+
+export const OutlinedButtonLoading = () => {
+  return (
+    <ThemeProvider>
       <Button
-        className={'OutlinedButton'}
+        buttonClasses={'OutlinedButton'}
         variant={variants.OUTLINED}
-        onClick={() => console.log('clicked on outlined')}
+        isLoading={true}
       >
         Button
       </Button>
@@ -49,7 +69,7 @@ export const OutlinedButtonDisabled = () => {
   return (
     <ThemeProvider>
       <Button
-        className={'OutlinedButtonDisabled'}
+        buttonClasses={'OutlinedButtonDisabled'}
         variant={variants.OUTLINED}
         disabled={true}
       >
@@ -62,10 +82,20 @@ export const OutlinedButtonDisabled = () => {
 export const TextButton = () => {
   return (
     <ThemeProvider>
+      <Button buttonClasses={'TextButton'} variant={variants.TEXT}>
+        Button
+      </Button>
+    </ThemeProvider>
+  );
+};
+
+export const TextButtonLoading = () => {
+  return (
+    <ThemeProvider>
       <Button
-        className={'TextButton'}
+        buttonClasses={'TextButton'}
         variant={variants.TEXT}
-        onClick={() => console.log('clicked on text')}
+        isLoading={true}
       >
         Button
       </Button>
@@ -77,7 +107,7 @@ export const TextButtonDisabled = () => {
   return (
     <ThemeProvider>
       <Button
-        className={'TextButtonDisabled'}
+        buttonClasses={'TextButtonDisabled'}
         variant={variants.TEXT}
         disabled={true}
       >
